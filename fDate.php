@@ -31,6 +31,8 @@ class fDate
 	 * @param  mixed   $component  A string or number to insert into the message
 	 * @param  mixed   ...
 	 * @return string  The composed and possible translated message
+	 
+	 * @proto static protected compose(message : String) : String
 	 */
 	static protected function compose($message)
 	{
@@ -62,6 +64,8 @@ class fDate
 	 *
 	 * @param  fDate|object|string|integer $date  The date to represent, `NULL` is interpreted as today
 	 * @return fDate
+	 
+	 @proto public new(?date : Dynamic)
 	 */
 	public function __construct($date=NULL)
 	{
@@ -129,6 +133,8 @@ class fDate
 	 *
 	 * @param  string $adjustment  The adjustment to make
 	 * @return fDate  The adjusted date
+	 *
+	 * @proto public adjust(adjustment) : Date
 	 */
 	public function adjust($adjustment)
 	{
@@ -150,6 +156,8 @@ class fDate
 	 *
 	 * @param  fDate|object|string|integer $other_date  The date to compare with, `NULL` is interpreted as today
 	 * @return boolean  If this date is equal to the one passed
+	 *
+	 * @proto public eq(otherDate : Dynamic) : Bool
 	 */
 	public function eq($other_date=NULL)
 	{
@@ -165,6 +173,8 @@ class fDate
 	 *
 	 * @param  string $format  The [http://php.net/date date()] function compatible formatting string, or a format name from fTimestamp::defineFormat()
 	 * @return string  The formatted date
+	 *
+	 * @proto public format(format : String) : String
 	 */
 	public function format($format)
 	{
@@ -217,6 +227,8 @@ class fDate
 	 * @param  boolean                     $simple      When `TRUE`, the returned value will only include the difference in the two dates, but not `from now`, `ago`, `after` or `before`
 	 * @param  boolean                     |$simple
 	 * @return string  The fuzzy difference in time between the this date and the one provided
+	 *
+	 * @proto public getFuzzyDifference(?other_date : Dynamic = null, simple : Bool = false) : String
 	 */
 	public function getFuzzyDifference($other_date=NULL, $simple=FALSE)
 	{
@@ -287,6 +299,8 @@ class fDate
 	 *
 	 * @param  fDate|object|string|integer $other_date  The date to compare with, `NULL` is interpreted as today
 	 * @return boolean  If this date is greater than the one passed
+	 *
+	 * @proto public get(otherDate : Dynamic) : Bool
 	 */
 	public function gt($other_date=NULL)
 	{
@@ -300,6 +314,8 @@ class fDate
 	 *
 	 * @param  fDate|object|string|integer $other_date  The date to compare with, `NULL` is interpreted as today
 	 * @return boolean  If this date is greater than or equal to the one passed
+	 *
+	 * @proto public gte(otherDate : Dynamic) : Bool
 	 */
 	public function gte($other_date=NULL)
 	{
@@ -313,6 +329,8 @@ class fDate
 	 *
 	 * @param  fDate|object|string|integer $other_date  The date to compare with, `NULL` is interpreted as today
 	 * @return boolean  If this date is less than the one passed
+	 *
+	 * @proto public lt(otherDate : Dynamic) : Bool
 	 */
 	public function lt($other_date=NULL)
 	{
@@ -326,6 +344,8 @@ class fDate
 	 *
 	 * @param  fDate|object|string|integer $other_date  The date to compare with, `NULL` is interpreted as today
 	 * @return boolean  If this date is less than or equal to the one passed
+	 *
+	 * @proto public lte(otherDate : Dynamic) : Bool
 	 */
 	public function lte($other_date=NULL)
 	{
@@ -347,6 +367,8 @@ class fDate
 	 *
 	 * @param  string $format  The current date will be formatted with this string, and the output used to create a new object
 	 * @return fDate  The new date
+	 *
+	 * @proto public modify(format : String) : Date
 	 */
 	public function modify($format)
 	{
